@@ -1,6 +1,5 @@
-/*Modifies the volume of an audio
-file using command line
-adjustment factor*/
+/*Modify a wav files sound using command line 
+adjustment factor (./volume input.wav output.wav factor)*/
 
 #include <cs50.h>
 #include <stdint.h>
