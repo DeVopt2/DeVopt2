@@ -11,7 +11,6 @@ const int HEADER_SIZE = 44;
 
 int main(int argc, char *argv[])
 {
-
     float factor = atof(argv[3]);
     int16_t buffer;
 
