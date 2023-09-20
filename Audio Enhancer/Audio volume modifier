@@ -1,4 +1,5 @@
-/*Modifies the volume of an audio file using command line
+/*Modifies the volume of an audio
+file using command line
 adjustment factor*/
 
 #include <cs50.h>
