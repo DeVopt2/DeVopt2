@@ -1,0 +1,38 @@
+
+
+
+--List all songs single column
+SELECT name FROM songs;
+
+--Songs,in asscending order by tempo,single column
+SELECT name FROM songs ORDER BY tempo ASC;
+
+
+--Top 5 top longest songs, in descending length order.
+SELECT name FROM songs ORDER BY duration_ms DESC LIMIT 5;
+
+--List the names of any songs that have danceability,
+--energy, and valence greater than 0.75.
+SELECT name FROM songs WHERE danceability > 0.75 AND energy > 0.75 AND valence > 0.75;
+
+--Average energy of all the songs.
+SELECT AVG(energy) FROM songs;
+
+--Lists the names of songs that are by Post Malone
+SELECT *
+FROM songs
+WHERE name LIKE 'Post Malone%';
+
+
+--Average energy of songs by Drake.
+SELECT AVG(energy)
+FROM songs
+WHERE name IN (
+  SELECT name
+  FROM artists
+  WHERE name = 'Drake';
+)
+
+
+--Songs that feature other artists will include “feat.” --in the name of the song. Single column.
+SELECT name FROM songs WHERE name LIKE '%feat.%';
