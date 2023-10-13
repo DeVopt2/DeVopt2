@@ -1,23 +1,24 @@
 
 sqlite> .schema
-> bash
-CREATE TABLE Songs (
-id INTEGER,
-name TEXT,
-artist id INTEGER
-danceability REAL
-energy REAL
-key INTEGER,
-loudness REAL,
-speechiness REAL,
-valence REAL,
-tempo REAL,
-duration_ms INTEGER
+> CREATE TABLE Songs (
+id INTEGER NOT NULL,
+name TEXT NOT NULL,
+artist id INTEGER NOT NULL,
+danceability REAL NOT NULL,
+energy REAL NOT NULL,
+key INTEGER NOT NULL,
+loudness REAL NOT NULL,
+speechiness REAL NOT NULL,
+valence REAL NOT NULL,
+tempo REAL NOT NULL,
+duration_ms INTEGER NOT NULL,
 );
-CREATE TABLE artists
-id INTEGER,
-name TEXT
-sqlite>
+CREATE TABLE artists(
+id INTEGER NOT NULL,
+name TEXT NOT NULL,
+PRIMARY KEY(id),
+);
+
 
 
 
