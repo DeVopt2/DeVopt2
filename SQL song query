@@ -1,6 +1,4 @@
 
-
-
 --List all songs single column
 SELECT name FROM songs;
 
@@ -22,7 +20,6 @@ SELECT AVG(energy) FROM songs;
 SELECT *
 FROM songs
 WHERE name LIKE 'Post Malone%';
-
 
 --Average energy of songs by Drake.
 SELECT AVG(energy)
