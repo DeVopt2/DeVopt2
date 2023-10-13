@@ -1,4 +1,3 @@
-
 --List all songs single column
 SELECT name FROM songs;
 
