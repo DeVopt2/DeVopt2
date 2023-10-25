@@ -1,0 +1,101 @@
+
+
+
+
+
+{
+import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+}
+
+/*adb5bd*/
+
+$body-color: {
+$transparent;
+}
+
+$foreground-color:{
+$transparent;
+{  
+ font-color: #f1f1f1;
+ font-size: 16px font-family: 'Lato', san-serif';
+ font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    margin: auto;
+    z-index: 3;
+    text-align: left;
+}
+
+
+$btn-warning {
+    btn-bg: $warning-subtitle;
+    btn-border-color: ($white, .25);
+    btn-hover-bg: $success;
+    btn-hover-border-color: ($white, .25);
+    btn-active-bg: $success;
+    btn-active-border-color: ($white, .5);
+    btn-focus-border-color: $white, .5);
+   /* --bs-btn-focus-box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .2);*/
+  }
+
+
+
+
+#forms;
+$form-valid-color: { $teansparent 5px;
+}
+$form-valid-border-color: {$warning-subtle;
+}
+$form-invalid-color: { $red-glow-600;
+}
+$form-invalid-border-color: {$warning-subtle;
+}
+
+
+
+$all-colors: {map-merge-multiple($blues, $indigos, $purples, $pinks, $reds, $oranges, $yellows, $greens,
+$grays, $teals, $cyans};
+
+$utilities: map-merge{
+  $utilities,
+  (
+    "color": map-merge(
+      map-get($utilities, "color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "color"), "values"),
+          (
+            $all-colors
+          };
+ 
+
+@import "bootstrap/scss/utilities/api";
+This will generate new .text-{color}-{level} utilities for every color and level. You can do the same for any other utility and property as well.
+
+
+
+$"float": (
+  responsive: true,
+  property: float,
+  values: (
+    start: left,
+    end: right,
+    none: none,
+  ))
+
+
+.footer{
+text-align: center;
+sub-color: #EC1E1E;
+}
+
+
+$container-fluid{
+body-background: $transparent;
+}
+
