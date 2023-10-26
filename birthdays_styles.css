@@ -32,8 +32,8 @@ $transparent;
 }
 
 
-$btn-warning {
-    btn-bg: $warning-subtitle;
+$btn-danger {
+    btn-bg: $danger-subtitle;
     btn-border-color: ($white, .25);
     btn-hover-bg: $success;
     btn-hover-border-color: ($white, .25);
@@ -49,11 +49,11 @@ $btn-warning {
 #forms;
 $form-valid-color: { $teansparent 5px;
 }
-$form-valid-border-color: {$warning-subtle;
+$form-valid-border-color: {$danger-subtle;
 }
 $form-invalid-color: { $red-glow-600;
 }
-$form-invalid-border-color: {$warning-subtle;
+$form-invalid-border-color: {$danger-subtle;
 }
 
 
