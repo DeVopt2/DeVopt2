@@ -19,7 +19,7 @@
       
     th:tr{ 
         color: #f1f1f1; 
-        border: solid-warning-subtle 5px rounded-3; 
+        border: solid-danger-subtle 5px rounded-3; 
         background-color: transparent; 
     } 
     tr:nth-of-type(2n){ 
@@ -37,7 +37,7 @@
 {% block body %}
 <div class="header"></div>
 <h1>Birthdays</h1>
-<div class="container-fluid text-center">
+<div class="container-fluid text-center background-transparenr">
 <div class=section>Birthdays</section>
   </div>
 <table style="margin: "center" vertical-alignment:"middle"> 
@@ -67,8 +67,8 @@ autofocus required>
     Please enter a birthday.
  <br><br> </div>
   <div class="center"> 
-<button type="button" value="submit" class="btn btn-warning-subtle">Save changes</button>
-<button type="button" value="reset" class="btn btn-warning-subtle">Reset</button>
+<button type="button" value="submit" class="btn btn-danger-subtle">Save changes</button>
+<button type="button" value="reset" class="btn btn-danger-subtle">Reset</button>
 
  </div>
 </form>
@@ -95,9 +95,8 @@ autofocus required>
             </tr>
         </thead>
         <tbody>
-        <!-- For loop logic of birthdays database -->1
-{%for i in range(1, len)%} 
-  
+        <!-- For loop logic of birthdays database -->
+            {%for i in range(1, len)%} 
 <!-- table rows -->
 <tr> 
     <td>{{name[i]}</td> 
