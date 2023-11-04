@@ -35,7 +35,7 @@ link href="/birthdays.js" rel="javascript">
   
 {% extends "layout.html" %}
 {% block title %}Birthdays{% endblock %} 
-% block head %}Add a Birthday
+% block head %}Don't Forget To Log Birthdays
     <link href="/static/styles.css" type="text/css rel="stylesheet">
     <link href=/static/finance.js type="text/js" rel=javascript>
 {% endblock %}
@@ -52,10 +52,10 @@ link href="/birthdays.js" rel="javascript">
 accept-charset="utf-8" action=""/submit" method="POST">
 
   <input type="name" class="form-control is-invalid" id="floatingInputGroup2" placeholder="name" required>
-<div class="invalid-feedback">Please enter a <u>Name</u></div>
-<input type="birthday" class="form-control is-invalid" id="floatingInputGroup2" placeholder="birthdate" required>
+<div class="invalid-feedback">Please enter a <bold><u>Name</u></bold></div>
+<input type="month" class="form-control is-invalid" id="floatingInputGroup2" placeholder="" required>
 <div class="invalid-feedback">
-    Please enter a <u>Birthday</u></div>
+    Please enter a <bold><u>Birthday</u></bold></div>
 
  <br><br> 
   <div class="center"> 
@@ -74,11 +74,6 @@ accept-charset="utf-8" action=""/submit" method="POST">
 
 <!-- Table headers -->
     
-
-   
-
-
-    <h2>All Birthdays</h2>
     <table>
         <thead>
             <tr>
