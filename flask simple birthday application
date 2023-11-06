@@ -1,0 +1,89 @@
+
+
+
+{% extends "layout.html" %}
+{% block title %}Birthdays{% endblock %} 
+% block head %}Don't Forget To Log Birthday 
+    <link href="/static/styles.css" type="text/css rel="stylesheet">
+    <link href=/static/finance.js type="text/js" rel=javascript>
+{% endblock %}
+{% block content %}
+
+
+<div class="section">
+<p|e>{{name[i]}}
+    {{month[i]}}</p|e>   
+    
+        
+{%for i in range(1, len)%} 
+        
+
+<!-- Table headers -->
+  <form action="/birthdays.html" method="POST">  
+    <table>
+        <thead>
+            <tr>
+        </thead>
+        <tbody>
+        <!-- For loop logic of birthdays database -->
+      
+  
+  <!-- table rows -->    
+  
+    <th>Name</th>
+  <td>  <label for="name"></label> 
+      <input type="text" required></td>
+      <th>Month</th>
+      <label for="datemin"></label> 
+      <td><input type="month" id="datemin" 
+       name="datemin" required></td>
+
+  <div class="container-fluid">
+
+ <br><br> 
+  <div class="center"> 
+<button class="save" value="submit" class="btn btn-warning-subtle type="save">Save changes</button>
+<button class="reset"  value="reset" class="btn btn-warning-subtle" type="reset">Reset</button>
+
+</form></tr>
+</table> </div>
+
+{%- endfor%} 
+    
+
+     
+  
+<br><br><br>
+<p|e><footer class>
+Thanks for coming by <sup>JULIE<sup></footer>
+<br>><br><br></p|e>
+</body></html>
+
+  
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
