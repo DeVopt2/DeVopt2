@@ -1,89 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<html>
 
-
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 {% extends "layout.html" %}
-{% block title %}Birthdays{% endblock %} 
-% block head %}Don't Forget To Log Birthday 
-    <link href="/static/styles.css" type="text/css rel="stylesheet">
-    <link href=/static/finance.js type="text/js" rel=javascript>
+{% block head %}
+{% block title %}Birthdays{% endblock %}
+<link href="
+/static/styles.css" type="text/css rel="stylesheet">
+<link href=/static/finance.js type="text/js" rel=javascript>
+{% endblock %}
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href="/styles.css" rel="stylesheet">
+link href="/birthdays.js" rel="javascript">
+
+<!-- Table style -->
+/*
+<style type="text/css">
+
+th:tr{
+	color: #f1f1f1;
+	border: solid-warning-subtle 5px rounded-3;
+	background-color: transparent;
+}
+tr:nth-of-type(2n){
+
+
+}
+
+td{
+	padding: 8px 8px;
+	border: 1px solid transparent;
+}
+</style> */
 {% endblock %}
 {% block content %}
-
-
+<div class=container-fluid>
+<p|e>{{users.name[i]}}
+{{users.month[i]}}</p|e>
+{%for i in range(0, len)%}
+{%- endfor %}
 <div class="section">
-<p|e>{{name[i]}}
-    {{month[i]}}</p|e>   
-    
-        
-{%for i in range(1, len)%} 
-        
+<form action="/birthdays.html" method="POST">
+<fieldset>
+<table class="table responsive" border border-z-index:-3;">
 
-<!-- Table headers -->
-  <form action="/birthdays.html" method="POST">  
-    <table>
-        <thead>
-            <tr>
-        </thead>
-        <tbody>
-        <!-- For loop logic of birthdays database -->
-      
-  
-  <!-- table rows -->    
-  
-    <th>Name</th>
-  <td>  <label for="name"></label> 
-      <input type="text" required></td>
-      <th>Month</th>
-      <label for="datemin"></label> 
-      <td><input type="month" id="datemin" 
-       name="datemin" required></td>
+<caption>Don't Forget To Log Birthday</caption>
 
-  <div class="container-fluid">
+<thead class="table-dark">
+    <tr "d-inline-flex">
+	        <th scope="col">All Birthdays
+			        </th>
+					    </tr>
+						</thead>
+						<tbody>
+						    <tr "d-inline-flex">
+							        <th scope="row">Name</th>
+									        <label for="name"></label>
+											        <td><input type="text" id="name" required>
+													            {{ users.name[i]</td>
+																        <th scope="row">Birthday</th>
+																		        <label for="month"></label>
+																				        <td><input type="month" id="month"
+																						            name="datemax" required>
+																									            {{users.month[i]}}</td>
+																												    </tr>
+																													</tbody>
+																													</table>
+																													<div class="center">
+																													<button class="save" value="submit" class="btn btn-warning-subtle type="submit">Save changes</button>
+																													<button class="reset"  value="reset" class="btn btn-warning-subtle"
+																													type="reset">Reset</button></div>
 
- <br><br> 
-  <div class="center"> 
-<button class="save" value="submit" class="btn btn-warning-subtle type="save">Save changes</button>
-<button class="reset"  value="reset" class="btn btn-warning-subtle" type="reset">Reset</button>
+																													</fieldset>
+																													</form>
+																													</div>
+																													</div></div>
 
-</form></tr>
-</table> </div>
+																													<br><br>
 
-{%- endfor%} 
-    
+																													<table class="table responsive" border border-z-index:-3;">
+																													  <caption>Logs</caption>
+																													   <thead class="bg-success-subtle
+																													       border-success-subtle color-success">
+																														       <tr "d-inline-flex">
+																															       <th scope="col">#</th>
+																																       <th scope="col">Name</th>
+																																	         <th scope="col">Birthday</th>
 
-     
-  
-<br><br><br>
-<p|e><footer class>
-Thanks for coming by <sup>JULIE<sup></footer>
-<br>><br><br></p|e>
-</body></html>
+																																				       </tr>
+																																					     </thead>
+																																						   <tbody>
+																																						     <tr "d-inline-flex">
+																																							       <th scope="row">1</th>
+																																								         <td>{users.username[i]</td>
+																																										       <td>{{users.month[i]}}</td>
 
-  
-{% endblock %}
-
-
-
-
-
-
-
-
-
-
-
+																																														       </tr>
+																																															     </tbody>
+																																																 </table>
+																																																 </container>
 
 
 
 
 
+																																																	  <br><br><br>
+																																																	  <p|e><footer class>
+																																																	  Thanks for coming by <sup>JULIE</sup>
+																																																	  </footer>
+																																																	  </p|e>
 
 
-
-
-
-
-
-
-
-
+																																																	  <link href=/static/finance.bundle.min.js type="text/js" rel=javascript>
+																																																	  {% endblock %}
+																																																	  
