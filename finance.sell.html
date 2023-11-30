@@ -1,0 +1,353 @@
+{% extends "layout.html" %}
+
+{% blockhead %}
+<link href="/static/styles.min.css" type="text/css rel="stylesheet">
+{% block title %}Sell!<sup font-color="success">we're the place to get stock quotes,buy/sell...</sup>
+<style>
+/*progress {
+color: #fff;
+background: #000;
+padding: 0.25em 1em;
+border-radius: 1em;
+width: 25%;
+}
+</style>*/
+
+{% endblock %}
+{% endblock %}
+
+(% block content %}
+/*<div data-ng-app="" data-ng-init="portfolio.shares=1;portfolio.price=5">*/
+
+
+<div class="container-fluid">
+
+/*  <a class="nav-link" href="#scrollspypurchaseonly"><b><u>Only</u> purchasing stock?</b><muted>(click here!)
+</muted></a></label>*/
+
+CREATE VIEW portfolio AS
+SELECT  {{ portfolio.fname[i] ~}},{{ portfolio.lname[i] }},{{ portfolio.email[i] }},{{portfolio.phone[i] }},{{ portfolio.country[i] }},{{portfolio.address[i] }},{{ portfolio.city[i] }},{{ portfolio.state[i] }}{{ portfolio.zip[i] }},
+{ creditcardno[i] }},{{ creditcardexp[i] }},
+{{ creditcardsecuritycode[i] }},{{ portfolio.DATETIME }}, {{ portfolio.buy_symbol[i] }},{{ portfolio.buy_currentprice[i] }},{{ portfolio.buy_shares[i] }},{{ portfolio.buy_DATETIME[i] }},
+{{ portfolio.sell_fname[i] ~}},{{ portfolio.sell_lname[i] }},{{ portfolio.sell_email[i] }},{{portfolio.sell_phone[i] }},{{ portfolio.sell_country[i] }},{{portfolio.sell_address[i] }},{{ portfolio.sell_city[i] }},{{ portfolio.sell_state[i] }}{{ portfolio.sell_zip[i] }},
+{{ portfolio.sell_symbol[i] }},{{ portfolio.sell_currentprice[i] }},{{ portfolio.sell_shares[i] }},{{ portfolio.sell_DATETIME[i] }}
+WHERE {{ portfolio.fname[i]}},{{ portfolio.lname[i] }},{{ portfolio.email[i] }},{{portfolio.phone[i] }},{{ portfolio.country[i] }},{{portfolio.address[i] }},{{ portfolio.city[i] }},{{ portfolio.state[i] }}{{ portfolio.zip[i] }},  {{ portfolio.fname[i] ~}},{{ portfolio.lname[i] }},{{ portfolio.email[i] }},{{portfolio.phone[i] }},{{ portfolio.country[i] }},{{portfolio.address[i] }},{{ portfolio.city[i] }},{{ portfolio.state[i] }}{{ portfolio.zip[i] }},
+{ creditcardno[i] }},{{ creditcardexp[i] }},
+{{ creditcardsecuritycode[i] }},{{ portfolio.DATETIME }}, {{ portfolio.buy_symbol[i] }},{{ portfolio.buy_currentprice[i] }},{{ portfolio.buy_shares[i] }},{{ portfolio.buy_DATETIME[i] }},
+{{ portfolio.sell_fname[i] ~}},{{ portfolio.sell_lname[i] }},{{ portfolio.sell_email[i] }},{{portfolio.sell_phone[i] }},{{ portfolio.sell_country[i] }},{{portfolio.sell_address[i] }},{{ portfolio.sell_city[i] }},{{ portfolio.sell_state[i] }}{{ portfolio.sell_zip[i] }},
+{{ portfolio.sell_symbol[i] }},{{ portfolio.sell_currentprice[i] }},{{ portfolio.sell_shares[i] }},      {{ portfolio|sum(attribute'deposit[b] + users.cash[i]')},
+{{portfolio|sum(attribute='(buy_currentprice[i] * buy_shares[i]'))}}
+{{portfolio|sum(attribute='(sell_currentprice * sell_shares[i]')}}
+{{ portfolio.sell_DATETIME[i] }}
+FULL JOIN ON users WHERE portfolio.id=user.id
+INSERT INTO users
+SELECT {{ users.cash[i] }},{{ users.username[i] }}      {{ portfolio|sum(attribute'deposit[b] + users.cash[i]')}
+{{ users|sum(attribute='{{(users.cash[i] -  (price[i]  *  shares[i]'))}},{{ users,portfolio|sum(attribute='users.cash[i] +
+(users.cash[i] - (portfolio.buy_currentprice[i] * portfolio.buy_shares[i]'))}},{{ users,portfolio|sum(attribute='users.cash[i] +
+(users.cash[i] - (portfolio.buy_currentprice[i] * portfolio.buy_shares[i]'))}},
+WHERE {{users.username[i] }},{{ users.cash[i] }},
+ORDER BY {{ portfolio.buy_currentprice ASC;
+
+INSERT INTO portfolio
+SELECT {{ deposit[b] }},{{ symbol[b] }}, {{ shares[b] }},{{ price[b] }},{{ portfolio.fname[i] ~}},{{ portfolio.lname[i] }},{{ portfolio.email[i] }},{{portfolio.phone[i] }},{{ portfolio.country[i] }},{{portfolio.address[i] }},{{ portfolio.city[i] }},{{ portfolio.state[i] }}{{ portfolio.zip[i] }},
+{ creditcardno[i] }},{{ creditcardexp[i] }},
+{{ creditcardsecuritycode[i] }},{{ portfolio.DATETIME }}, {{ portfolio.buy_symbol[i] }},{{ portfolio.buy_currentprice[i] }},{{ portfolio.buy_shares[i] }},{{ portfolio.buy_DATETIME[i] }},
+{{ portfolio.sell_fname[i] ~}},{{ portfolio.sell_lname[i] }},{{ portfolio.sell_email[i] }},{{portfolio.sell_phone[i] }},{{ portfolio.sell_country[i] }},{{portfolio.sell_address[i] }},{{ portfolio.sell_city[i] }},{{ portfolio.sell_state[i] }}{{ portfolio.sell_zip[i] }},
+{{ portfolio.sell_symbol[i] }},{{ portfolio.sell_currentprice[i] }},{{ portfolio.sell_shares[i] }},{{ portfolio.sell_DATETIME[i] }}
+WHERE {{ portfolio.fname[i]}},{{ portfolio.lname[i] }},{{ portfolio.email[i] }},{{portfolio.phone[i] }},{{ portfolio.country[i] }},{{portfolio.address[i] }},{{ portfolio.city[i] }},{{ portfolio.state[i] }}{{ portfolio.zip[i] }},  {{ portfolio.fname[i] ~}},{{ portfolio.lname[i] }},{{ portfolio.email[i] }},{{portfolio.phone[i] }},{{ portfolio.country[i] }},{{portfolio.address[i] }},{{ portfolio.city[i] }},{{ portfolio.state[i] }}{{ portfolio.zip[i] }},
+{ creditcardno[i] }},{{ creditcardexp[i] }},
+{{ creditcardsecuritycode[i] }},{{ portfolio.DATETIME }}, {{ portfolio.buy_symbol[i] }},{{ portfolio.buy_currentprice[i] }},{{ portfolio.buy_shares[i] }},{{ portfolio.buy_DATETIME[i] }},
+{{ portfolio.sell_fname[i] ~}},{{ portfolio.sell_lname[i] }},{{ portfolio.sell_email[i] }},{{portfolio.sell_phone[i] }},{{ portfolio.sell_country[i] }},{{portfolio.sell_address[i] }},{{ portfolio.sell_city[i] }},{{ portfolio.sell_state[i] }}{{ portfolio.sell_zip[i] }},
+{{ portfolio.sell_symbol[i] }},{{ portfolio.sell_currentprice[i] }},{{ portfolio.sell_shares[i] }},
+{{portfolio|sum(attribute='(buy_currentprice[i] * buy_shares[i]'))}}
+{{portfolio|sum(attribute='(sell_currentprice * sell_shares[i]')}}
+{{ portfolio.sell_DATETIME[i] }}
+FULL JOIN ON users WHERE portfolio.id=user.id
+INSERT INTO users
+SELECT {{ users.cash[i] }},{{ users.username[i] }}
+{{ users|sum(attribute='{{(users.cash[i] -  (price[i]  *  shares[i]'))}},{{ users,portfolio|sum(attribute='users.cash[i] +
+(users.cash[i] - (portfolio.buy_currentprice[i] * portfolio.buy_shares[i]'))}},{{ users,portfolio|sum(attribute='users.cash[i] +
+(users.cash[i] - (portfolio.buy_currentprice[i] * portfolio.buy_shares[i]'))}},
+WHERE {{users.username[i] }},{{ users.cash[i] }};
+
+<p|e>{%for i in range(0, len)%} {%- endfor %}¬<\p|e>
+
+<p|e>
+{% for buy_currentprice in portfolio %}
+{% if loop.previtem is defined and value  loop.previtem %}
+{% set reply | wordwrap %}
+The value just increased!
+{% endset %}{% endif %}}
+{{ buy_currentprice }}
+{% if loop.nextitem is defined and loop.nextitem > value %}{% set reply | wordwrap %}
+The value will increase even more!
+{{ buy_currentprice }}
+{% endset %}{% endif %}}
+{% if loop.previtem is defined and value < loop.previtem %}      {% set reply | wordwrap %}
+The value just decreased!
+{% endset %}{% endif %}}
+{{ buy_currentprice }}
+{% if loop.nextitem is defined and loop.nextitem < value %}      {% set reply | wordwrap %}
+The value will decrease even more!
+{{ buy_currentprice }}
+{% endset %}{% endif %}} {%- endfor %}
+</p|e>
+
+{% for row in range(0, len) %}
+count= +1;{%- endfor %}
+</p|e>
+<p|e>
+{% for users.name in range(0, len) %}
+{% set reply | wordwrap %}
+{{ "Hello, %s!" % users.username }}
+{% endset %}{%- endfor %} </p|e>
+
+
+<p|e>{%for i in range(0, len)%}
+{%- endfor%}<\p|e>
+
+<p|e>{%for b in range(0, len)%}
+if {{ shares[b] }}
+{{ portfolio.buy_shares[i]}} = {{ shares[b] }}
+{{% endif %}}
+if {{ price[b]]
+{{ portfolio.buy_price[i] }} = {{ price[b] }}
+{{% endif %}}
+if {{ deposit[b] }}
+users.cash = deposit[b] + users.cash
+{%- endif %} {%- endfor%}<\p|e>
+
+p|e>{%for i,b in range(0, len) %}
+{% if users.cash is defined and value <  {{ users|sum(attribute='{{(users.cash[i] -
+10,000.00 (price[b]  *  shares[b]'))} %}
+<size="1px">😊</size> Sorry,your account balance will not allow purchase, the requirement is a default balance of $10,000.00 always. {% endif %}{{- endfor %}}
+
+{% for row in range(0, len) %}
+{{ "Hello, %s!" % users.name }}
+
+
+
+
+
+
+
+
+<div "progress-bar-container bg-dark" "padding-0.25em, 1em" "border-radius:1em" style="width:35%">
+<div class="progress" role="progressbar" aria-label="Animated striped" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width: 33%"></div>
+</div></div>
+
+<form class="in-line" action="/sell.html"  method="POST">
+<fieldset="form-control">
+<div "tab">
+<section>
+<div class="card text-white bg-transparent mb-5" style="max-width: 40rem; top-margin:0px, bottom-margin:5px
+padding:0.25em,1em z-index:3">
+<div class="card-header"></div>
+<div class="card-body">
+<h4 class="card-title">Sellers Information</h4><b><u><i>
+<tiny text>First tell us who you are</i></u></b></tinytext>
+<hr>
+<p class="card-text">
+<label for="fname">First Name
+</label>
+<div>
+<input type="text" id="fname" autofocus autocomplete="false" name="portfolio.firstname" placeholder="Doe" required>{{ portfolio.fname[i] }}</div>
+<label for="lname">Last Name</label>
+
+<div>
+<input type="text" id="lname" autofocus autocomplete"false" name="portfolio.lastname" placeholder="Remi" required>portfolio.lname[i] }}  </div>
+<label for="email">Email</label>
+<div>
+<input type="text" id="email" autofocus autocomplete="false" name="portfolio.email" id="email" name="email"
+pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="username@example.com"
+oninput="this.className=''">
+</div>
+<label for="phone">Phone</label>
+<div>
+<input type="text" id="phone" autofocus autocomplete="false" name="portfolio.phone pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+placeholder="123-456-789" oninput="this.className = ''" required>{{ portfolio.phone[i] }}
+</div>
+<label for="country">Country</label>
+<div>
+<input type="text" id="country" autofocus autocomplete="false" pattern="[A-Za-z]{3}"
+name="portfolio.country" placeholder="United States" required>
+{{ portfolio.country[i] }}
+</div>
+
+<div>
+
+<small name="countryHelp" class="form-text"> Please enter your 3 letter country code
+</small>
+</div>
+<label for="address">Home Address</label><div>
+<input type="text" id="address" autofocus autocomplete="false" name="portfolio.home_address" placeholder="" required>
+{{ portfolio.address[i] }}
+</div>
+<label for="city">City</label>
+<div>
+<input type="text" id="city" autofocus autocomplete="false" name="portfolio.city" placeholder="Cambridge" required>portfolio.city[i] }}
+</div>
+<label for="state">State</label>
+<div>
+<input type="text" id="state" autofocus autocomplete="false" name="portfolio.state" placeholder="Massachusetts" required>{{ portfolio.state[i] }}
+</div>
+<label for="zip">Zip</label>
+<div>
+<input type="text" id="zip" name="portfolio.zip" placeholder="10001" required>
+{{ portfolio.zip[i] }}
+</div>
+</div>
+
+</p>
+</fieldset>
+<fieldset="form-control">
+<section>
+<div class="card text-white bg-transparent mb-5" style="max-width: 40rem;top-margin:0px, bottom-margin:5px
+padding:0.25em,1em z-index:3">
+<div class="card-header">
+</div>
+<div class="card-body">
+<h4 class="card-title">Purchasers Information</h4>
+<hr>
+<p class="card-text">
+<label for="fname">First Name</label>
+<div>
+<input type="text" id="fname" autofocus autocomplete="false" name=
+"portfolio.sold_firstname" placeholder="Doe" required>{{ portfolio.sell_fname[i] }}
+</div>
+<label for="lname">Last Name</label>
+<div>
+<input type="text" id="lname" autofocus autocomplete="false" name=
+"portfolio.sold_lastname" placeholder="Remi" required>{{ portfolio.sell_lname[i] }}
+</div>
+<label for="email">Email</label>
+<div>
+<input type="text" id="email" autofocus autocomplete="false" name=
+"portfolio.sold_email" name="portfolio.sold_email"
+pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+placeholder="username@example.com"
+oninput="this.className = ''">{{ portfolio.sell_email[i] }}
+</div>
+<label for="phone">Phone</label>
+<div>
+<input type="text" id="phone" autofocus autocomplete="false" name="portfolio.sold_phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="123-456-789" oninput="this.className = ''" required>
+{{ portfolio.sell_phone[i] }}
+</div>
+<label for="country">Country
+</label>
+<div>
+<input type="text" id="country" autofocus autocomplete="false" name="portfolio.sold_country"
+pattern="[A-Za-z]{3}"
+placeholder="USA" required>{{ portfolio.sell_country[i] }}
+</div>
+
+<div>
+<small name="countryHelp">Enter a 3 letter country code</small>
+</div>
+<label for="address">Home Address</label>
+<div>
+<input type="text" id="address" autofocus autocomplete="false" name="portfolio.sold_homeaddress" placeholder="United States" required>{{ portfolio.sell_address[i] }}
+</div>
+
+<label for="city">City</label>
+<div>
+<input type="text" id="city" autofocus autocomplete="false"
+name="portfolio.sold_city" placeholder="Cambridge" required>{{portfolio.sell_city[i] }}
+</div>
+
+<label for="state">State</label>
+<div>
+<input type="text" id="state" autofocus autocomplete="false" name="portfolio.sold_state" placeholder="Massachusetts" required>{{ portfolio sell_state[i] }}
+</div>
+
+<label for="portfolio_sellZip">Zip</label>
+<div>
+<input type="text" id="portfolio_sellZip" autofocus autocomplete="false" name="portfolio.sold_zip" placeholder="10001" required>
+{{ portfolio.sell_zip[i] }}
+</div>
+</div>
+</p>
+</fieldset>
+<fieldset="form-control">
+<div class="card text-white bg-transparent  mb-5" style="max-width: 40rem;top-margin:0px, bottom-margin:5px
+padding:0.25em,1em z-index:3">
+<div class="card-header">
+
+</div>
+<section>
+<div class="card-body">
+<h4 class="card-title">Payment for Stocks</h4>
+<p class="card-text">
+<hr>
+<label for="portfolio_buySymbol">Symbol</label>
+<div>
+<input type="option" value="lookup" id="portfolio _buySymbol" autofocus autocomplete="false" name="portfolio.symbol" placeholder="NFLX" required>{{ portfolio.buy_symbol[i] }}
+</option>
+</div>
+<label for="portfolio_coSellname" disabled>Company Name</label></disabled>
+<input type="option"
+value="lookup" id="portfolio _coSellname" autofocus autocomplete="false" name="portfolio.coSellname" placeholder="Netflix" disabled></disabled>
+</option>
+
+
+<label for="portfolio _sellShares">Number Shares To Sell</label>
+<div>
+<input type="text" id="portfolio_sellShares" autofocus autocomplete="false" name="shares"pattern="[0-9]" placeholder="200" required>
+{{ portfolio.sell__shares[i] }}
+</div>
+<label for="portfolio _sellPrice">Price</label>
+<div>
+<input type="option" value="lookup" id="portfolio _sellPrice" autofocus autocomplete="false" name="portfolio.buy_current_price[value|usd]" oninput="this.className = ''" pattern="[0-9]" placeholder="$    .00" required>{{ portfolio.buy_currentprice[i] }}
+</div>
+</div>
+</div>
+</fieldset>
+<fieldset="form-control">
+<div h3>
+Total Earnings</h3>
+<label for="cash_balance_addition">Added
+To Your Cash Balance<label>
+<div>
+<input type="text" id="cash_balance_addition" autofocus autocomplete="false" name="users.cash"pattern="[0-9]" placeholder="$">{{ portfolio|sum(attribute='buy_currentprice * sell_shares')[i]}}
+</div>
+
+
+
+<button class="btn btn primary" id=cashav
+onclick="myFunction()" type="submit">Add Earnings</button>
+</p>
+</fieldset>
+</fieldset>
+</div>
+</div></div>
+</p>
+</form>
+
+
+
+
+
+<script>
+function myFunction() {
+window.location.href = "/index.html";
+}
+</script>
+
+
+
+/*
+<script>
+let num=> {{
+shares * price
+}}
+let n = num.toFixed(2);
+
+document.getElementById("sell").innerHTML = n;
+</script>
+*/
+
+<link href=/static/finance.bundle.min.js type="text/js" rel=javascript>
+
+
+{% endblock %}
