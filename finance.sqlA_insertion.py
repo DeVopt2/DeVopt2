@@ -99,7 +99,6 @@ portfolio = Portfolio(id=1,/*ignore='Example',*/ name='Example', sequence='ABC',
 Base.metadata.create_all(engine)
 
 
-
 #Exception and error handling 
 try:
         # Retrieve user's account try:
