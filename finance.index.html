@@ -1,0 +1,225 @@
+
+
+{% extends "layout.html" %}
+{% block head %}
+{% block title %}C$50 
+<sup font-color="success">we're the place to get stock quotes,buy/sell...</sup>
+{% endblock %} 
+
+    <link href="/static/styles.min.css" type="text/css rel="stylesheet">    
+    
+    
+
+td{
+	bg: green-600;
+	rgba(0,0,0,0.2); 
+	/* Required for IE 5, 6, 7 */
+	/* ...or something to trigger hasLayout, like zoom: 1; */
+	width: 100%; 
+		
+	/* Theoretically for IE 8 & 9 (more valid) */	
+	/* ...but not required as filter works too */
+	/* should come BEFORE filter */
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	
+	/* This works in IE 8 & 9 too */
+	/* ... but also 5, 6, 7 */
+	filter: alpha(opacity=20%);
+	
+	/* Older than Firefox 0.9 */
+	-moz-opacity:0.2;
+	
+	/* Safari 1.x (pre WebKit!) */
+	-khtml-opacity: 0.2;
+    
+	/* Modern!
+	/* Firefox 0.9+, Safari 2?, Chrome any?
+	/* Opera 9+, IE 9+ */
+	opacity: 0.2;
+}
+</style>
+    
+{% endblock %}
+{% block content %}
+<class="container-fluid">
+
+
+CREATE VIEW portfolio AS
+SELECT  {{ portfolio.fname[i] ~}},{{ portfolio.lname[i] }},{{ portfolio.email[i] }},{{portfolio.phone[i] }},{{ portfolio.country[i] }},{{portfolio.address[i] }},{{ portfolio.city[i] }},{{ portfolio.state[i] }}{{ portfolio.zip[i] }},
+{ creditcardno[i] }},{{ creditcardexp[i] }},
+{{ creditcardsecuritycode[i] }},{{ portfolio.DATETIME }}, {{ portfolio.buy_symbol[i] }},{{ portfolio.buy_currentprice[i] }},{{ portfolio.buy_shares[i] }},{{ portfolio.buy_DATETIME[i] }},
+{{ portfolio.sell_fname[i] ~}},{{ portfolio.sell_lname[i] }},{{ portfolio.sell_email[i] }},{{portfolio.sell_phone[i] }},{{ portfolio.sell_country[i] }},{{portfolio.sell_address[i] }},{{ portfolio.sell_city[i] }},{{ portfolio.sell_state[i] }}{{ portfolio.sell_zip[i] }},
+{{ portfolio.sell_symbol[i] }},{{ portfolio.sell_currentprice[i] }},{{ portfolio.sell_shares[i] }},{{ portfolio.sell_DATETIME[i] }}
+WHERE {{ portfolio.fname[i]}},{{ portfolio.lname[i] }},{{ portfolio.email[i] }},{{portfolio.phone[i] }},{{ portfolio.country[i] }},{{portfolio.address[i] }},{{ portfolio.city[i] }},{{ portfolio.state[i] }}{{ portfolio.zip[i] }},  {{ portfolio.fname[i] ~}},{{ portfolio.lname[i] }},{{ portfolio.email[i] }},{{portfolio.phone[i] }},{{ portfolio.country[i] }},{{portfolio.address[i] }},{{ portfolio.city[i] }},{{ portfolio.state[i] }}{{ portfolio.zip[i] }},
+{ creditcardno[i] }},{{ creditcardexp[i] }},
+{{ creditcardsecuritycode[i] }},{{ portfolio.DATETIME }}, {{ portfolio.buy_symbol[i] }},{{ portfolio.buy_currentprice[i] }},{{ portfolio.buy_shares[i] }},{{ portfolio.buy_DATETIME[i] }},
+{{ portfolio.sell_fname[i] ~}},{{ portfolio.sell_lname[i] }},{{ portfolio.sell_email[i] }},{{portfolio.sell_phone[i] }},{{ portfolio.sell_country[i] }},{{portfolio.sell_address[i] }},{{ portfolio.sell_city[i] }},{{ portfolio.sell_state[i] }}{{ portfolio.sell_zip[i] }},
+{{ portfolio.sell_symbol[i] }},{{ portfolio.sell_currentprice[i] }},{{ portfolio.sell_shares[i] }},      {{ portfolio|sum(attribute'deposit[b] + users.cash[i]')},
+{{portfolio|sum(attribute='(buy_currentprice[i] * buy_shares[i]'))}}
+{{portfolio|sum(attribute='(sell_currentprice * sell_shares[i]')}}
+{{ portfolio.sell_DATETIME[i] }}
+FULL JOIN ON users WHERE portfolio.id=user.id
+INSERT INTO users
+SELECT {{ users.cash[i] }},{{ users.username[i] }}      {{ portfolio|sum(attribute'deposit[b] + users.cash[i]')}
+{{ users|sum(attribute='{{(users.cash[i] -  (price[i]  *  shares[i]'))}},{{ users,portfolio|sum(attribute='users.cash[i] +
+(users.cash[i] - (portfolio.buy_currentprice[i] * portfolio.buy_shares[i]'))}},{{ users,portfolio|sum(attribute='users.cash[i] +
+(users.cash[i] - (portfolio.buy_currentprice[i] * portfolio.buy_shares[i]'))}},
+WHERE {{users.username[i] }},{{ users.cash[i] }},
+ORDER BY {{ portfolio.buy_currentprice ASC;
+
+INSERT INTO portfolio
+SELECT {{ deposit[b] }},{{ symbol[b] }}, {{ shares[b] }},{{ price[b] }},{{ portfolio.fname[i] ~}},{{ portfolio.lname[i] }},{{ portfolio.email[i] }},{{portfolio.phone[i] }},{{ portfolio.country[i] }},{{portfolio.address[i] }},{{ portfolio.city[i] }},{{ portfolio.state[i] }}{{ portfolio.zip[i] }},
+{ creditcardno[i] }},{{ creditcardexp[i] }},
+{{ creditcardsecuritycode[i] }},{{ portfolio.DATETIME }}, {{ portfolio.buy_symbol[i] }},{{ portfolio.buy_currentprice[i] }},{{ portfolio.buy_shares[i] }},{{ portfolio.buy_DATETIME[i] }},
+{{ portfolio.sell_fname[i] ~}},{{ portfolio.sell_lname[i] }},{{ portfolio.sell_email[i] }},{{portfolio.sell_phone[i] }},{{ portfolio.sell_country[i] }},{{portfolio.sell_address[i] }},{{ portfolio.sell_city[i] }},{{ portfolio.sell_state[i] }}{{ portfolio.sell_zip[i] }},
+{{ portfolio.sell_symbol[i] }},{{ portfolio.sell_currentprice[i] }},{{ portfolio.sell_shares[i] }},{{ portfolio.sell_DATETIME[i] }}
+WHERE {{ portfolio.fname[i]}},{{ portfolio.lname[i] }},{{ portfolio.email[i] }},{{portfolio.phone[i] }},{{ portfolio.country[i] }},{{portfolio.address[i] }},{{ portfolio.city[i] }},{{ portfolio.state[i] }}{{ portfolio.zip[i] }},  {{ portfolio.fname[i] ~}},{{ portfolio.lname[i] }},{{ portfolio.email[i] }},{{portfolio.phone[i] }},{{ portfolio.country[i] }},{{portfolio.address[i] }},{{ portfolio.city[i] }},{{ portfolio.state[i] }}{{ portfolio.zip[i] }},
+{ creditcardno[i] }},{{ creditcardexp[i] }},
+{{ creditcardsecuritycode[i] }},{{ portfolio.DATETIME }}, {{ portfolio.buy_symbol[i] }},{{ portfolio.buy_currentprice[i] }},{{ portfolio.buy_shares[i] }},{{ portfolio.buy_DATETIME[i] }},
+{{ portfolio.sell_fname[i] ~}},{{ portfolio.sell_lname[i] }},{{ portfolio.sell_email[i] }},{{portfolio.sell_phone[i] }},{{ portfolio.sell_country[i] }},{{portfolio.sell_address[i] }},{{ portfolio.sell_city[i] }},{{ portfolio.sell_state[i] }}{{ portfolio.sell_zip[i] }},
+{{ portfolio.sell_symbol[i] }},{{ portfolio.sell_currentprice[i] }},{{ portfolio.sell_shares[i] }},
+{{portfolio|sum(attribute='(buy_currentprice[i] * buy_shares[i]'))}}
+{{portfolio|sum(attribute='(sell_currentprice * sell_shares[i]')}}
+{{ portfolio.sell_DATETIME[i] }}
+FULL JOIN ON users WHERE portfolio.id=user.id
+INSERT INTO users
+SELECT {{ users.cash[i] }},{{ users.username[i] }}
+{{ users|sum(attribute='{{(users.cash[i] -  (price[i]  *  shares[i]'))}},{{ users,portfolio|sum(attribute='users.cash[i] +
+(users.cash[i] - (portfolio.buy_currentprice[i] * portfolio.buy_shares[i]'))}},{{ users,portfolio|sum(attribute='users.cash[i] +
+(users.cash[i] - (portfolio.buy_currentprice[i] * portfolio.buy_shares[i]'))}},
+WHERE {{users.username[i] }},{{ users.cash[i] }};
+
+
+<p|e>{%for i in range(0, len)%} {%- endfor %}<\p|e>
+ 
+<p|e>  
+{% for buy_currentprice in portfolio %}
+    {% if loop.previtem is defined and value  loop.previtem %}
+       {% set reply | wordwrap %}
+        The value just increased!
+        {% endset %}{% endif %}}      
+    {{ buy_currentprice }}
+    {% if loop.nextitem is defined and loop.nextitem > value %}{% set reply | wordwrap %}
+        The value will increase even more!
+    {{ buy_currentprice }}    
+    {% endset %}{% endif %}}      
+    {% if loop.previtem is defined and value < loop.previtem %}      {% set reply | wordwrap %}
+        The value just decreased!
+    {% endset %}{% endif %}}      
+    {{ buy_currentprice }}
+    {% if loop.nextitem is defined and loop.nextitem < value %}      {% set reply | wordwrap %}
+        The value will decrease even more!
+    {{ buy_currentprice }}
+     {% endset %}{% endif %}} {%- endfor %} 
+ </p|e>  
+ 
+   <p|e>
+
+{% for row in range(0, len) %}
+count= +1;{%- endfor %}
+</p|e>
+<p|e>
+{% for users.name in range(0, len) %}
+{% set reply | wordwrap %}
+{{ "Hello, %s!" % users.name }}
+{% endset %}{%- endfor %} </p|e>
+
+   
+
+ <p|e>{%for i in range(0, len)%} 
+ {%- endfor%}<\p|e>
+ 
+<p|e>{%for b in range(0, len)%} 
+if {{ shares[b] }} 
+{{ portfolio.buy_shares[i]}} = {{ shares[b] }}
+{{% endif %}}
+if {{ price[b]]
+{{ portfolio.buy_price[i] }} = {{ price[b] }}
+{{% endif %}} 
+if {{ deposit[b] }}	
+users.cash = deposit[b] + users.cash
+ {% endif %} {%- endfor%}<\p|e>
+
+p|e>{%for i,b in range(0, len) %} 
+    {% if users.cash is defined and value <  {{ users|sum(attribute='{{(users.cash[i] - 
+    10,000.00 (price[b]  *  shares[b]'))} %}
+       <size="1px">😊</size> Sorry,your account balance will not allow purchase, the requirement is a default balance of $10,000.00 always. {% endif %}{{- endfor %}}</p|e>
+    
+       {% for row in range(0, len) %} 
+       {{ "Hello, %s!" % users.name }}
+ 
+
+ 
+   <class="container-fluid">
+  
+ 
+
+
+
+
+
+
+<table class="table responsive"
+ border border-5">   
+  <caption>Stock Fluctuations
+  </caption>
+ <thead class="table-dark"> e>
+    <tr "d-inline-flex">
+    <th scope="col">Row</th>
+      <th scope="col">Username</th>
+      <th scope="col">Cash Balance</th>
+      <th scope="col">Buys:</th>
+      <th scope="col">Symbol</th>
+      <th scope="col"><disabled>Co. Name
+      </disabled></th>
+      <th scope="col">Shares</th>
+      <th scope="col">Inital Price</th>
+      <th scope="col">Current Price</th>
+      <th scope="col">Holdings:</th>
+      <th scope="col">Stock Holdings</th>
+     <th scope="col">Total Holdings</th> 
+    </tr>
+  </thead>
+  <tbody> 
+  <tr "d-inline-flex"> 
+      <th scope="row"></th>
+      <td>{users.username[i]</td>
+      <td>{{users.cash[i]}}</td>
+            <td><span>
+      <i class="bi bi-right-arrow-circle"></i></span>
+      </td>
+      <td>{{ portfolio.buy_symbol[i]}}</td>
+     <td><disabled></disabled></td>
+     <td>{{ portfolio.buy_shares[i]}}</td> 
+      <td>{{ portfolio.buy_price[i]}}</td> 
+      <td>{{ portfolio.buy__currentprice[i]   }}
+      </td>
+      <td><span>
+      <i class="bi bi-right-arrow-circle"></i></span>
+      </td>
+      <td>{{ portfolio|sum(attribute='buy_currentprice[i] * buy_shares[i]'))}}</td>
+      <td>{{ users,portfolio|sum(attribute='users.cash[i] +
+(portfolio.buy_currentprice[i] * portfolio.buy_shares[i]'))}}</td>
+      
+    </tr>
+  </tbody>
+</table>
+</container>
+
+ 
+    <link href=/static/finance.bundle.min.js type="text/js" rel=javascript>
+{% endblock %}
+
+
+
+
+
+
+    
+    
+       
+
+
+
+
+
