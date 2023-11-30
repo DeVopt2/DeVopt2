@@ -1,0 +1,40 @@
+
+
+
+{% extends "layout.html" %}
+<div container-fluid>
+{% blockhead %}
+<link href="/static/styles.min.css" type="text/css rel="stylesheet">
+{% block title }
+ {% endblock %}
+ {{% endblock %}}
+ (% blockcontent %}
+ <class="container-fluid">
+ <form class="in-line" action="/quote.html"  method="POST">    
+  <div class="mb-3" form-text id="quoteHelp">
+  Get A Stock Quote</div>
+    <input type="text" class="form-control" autofocus
+    id="inputSymbol" autocomplete="false" name="symbol" placeholder="NFLX" required></div>
+   <button class="btn btn-primary"  data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="If not redirected in 5 secs. go to <a href="/quoted.html"</a> data-bs-original-title="Popover Title" button-type="submit">Get Quote</button>
+</form>   
+</container>
+      <link href=/static/finance.bundle.min.js type="text/js" rel=javascript>           
+       
+{% endblock %}
+
+
+
+
+
+    
+         
+ 
+
+
+
+
+
+
+
+
+
