@@ -1,0 +1,47 @@
+
+
+{% extends "layout.html" %}
+<div container-fluid>
+{% blockhead %}
+<link href="/static/styles.min.css" type="text/css rel="stylesheet">
+{% block title %}Quotes{% endblock %}
+ {{% endblock %}}
+ (% blockcontent %}
+
+<class="container-fluid">
+
+<table class="table responsive"
+ border border-5">
+  <caption>Here’s your quote</caption>
+  <thead class="table-divider">
+    <tr "d-inline-flex"> 
+    <th scope="col">#</th>
+      <th scope="col">Symbol</th>
+      <th scope="col">Price</th>
+  </thead>
+  <tbody>
+  <tr "d-inline-flex"> 
+      <th scope="row">1</th>
+      <td>{{ symbol }}</td>
+      <td>{{ price }}</td>
+ 
+
+ </container>
+ 
+
+
+      <link href=/static/finance.bundle.min.js type="text/js" rel=javascript>           
+       
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
