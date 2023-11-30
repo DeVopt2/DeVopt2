@@ -56,8 +56,8 @@ def buy_stock():
 session = Session()
 
 while                                # Retrieve user's account information
-    (user = session.query(Users).get(users_id)
-     stock = session.query(Portfolio).get(portfolio.id))
+    user = session.query(Users).get(users_id)
+     stock = session.query(Portfolio).get(portfolio.id):
 
 {                                                            # Calculate the total cost of the stocks
      total_cost = price * quantity
@@ -67,7 +67,7 @@ while                                # Retrieve user's account information
      users.cash >= total_cost + 10000.00
 }                                        #Perform the transaction                       # Deduct the cost from the user's cash balance
 try:
-    users.cash -= total cost
+    session.add(users.cash -= total cost)
                                                                                                                                                         # Update the user's account information in the databasw
 	session.commit()
 
