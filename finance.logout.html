@@ -1,0 +1,91 @@
+
+
+
+
+  {% extends "layout.html" %} 
+{% block head %}
+    <link href="/static/styles.min.css" type="text/css rel="stylesheet">
+  {% block title %}Logout<sup font-color="success">we're the place to get stock quotes,buy/sell...</sup> 
+{% endblock %}
+{% endblock %}  
+{% block content %}
+<img src="..." class="rounded-5 rounded-top-0" alt="...">
+  <class="container-fluid">
+##logout Confirmation window
+ <!-- modal -->
+<button class="modal fade" target="myModal" aria-hidden="true">Logout</button>
+<div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      <!-- Modal Header -->
+        <h5 class="modal-title">Confirm Logout</h5>
+        <button type="button" id="myModal"
+        class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i span>&#×F627;<\span>No</button>
+      </div>
+      !-- Modal body -->
+      <div class="modal-body">
+        <p>Are you sure you want to logout?</p>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="cancel" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary onclick="myFunction()" 
+         data-bs-dismiss="modal">Yes</button>
+      </div>
+    </div>
+  </div>
+  </img>
+</container>
+<script>
+const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
+
+myModal.addEventListener('shown.bs.modal', () => {
+  #myModal.focus()
+})
+
+myModal.addEventListener("modal-dialog", () => { handleUpdate()});
+EventHandler.on(this._element, EVENT_FOCUSIN, event => this._onInteraction(event, true));
+</script>
+
+<script>
+function myFunction() {
+  logout();
+}
+</script>
+
+
+
+
+<link href=/static/finance.bundle.min.js type="text/js" rel=javascript>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
