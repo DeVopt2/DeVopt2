@@ -1,0 +1,393 @@
+
+
+{% extends "layout.html" %}
+
+ {% blockhead %}
+ <link href="/static/styles.min.css" type="text/css rel="stylesheet">
+{% block title %}Buy <tinytext><u>or</u>Add To Cash Balance!</tinytext><sup font-color="success">we're the place to get stock quotes,buy/sell...</sup> 
+ {% endblock %}
+ {% endblock %}
+ (% block content %}
+ 
+ <div class="container-fluid">
+ 
+  /*  <a class="nav-link" href="#scrollspypurchaseonly"><b><u>Only</u> purchasing stock?</b><muted>(click here!)
+    </muted></a></label>*/
+
+CREATE VIEW portfolio AS
+SELECT  {{ portfolio.fname[i] ~}},{{ portfolio.lname[i] }},{{ portfolio.email[i] }},{{portfolio.phone[i] }},{{ portfolio.country[i] }},{{portfolio.address[i] }},{{ portfolio.city[i] }},{{ portfolio.state[i] }}{{ portfolio.zip[i] }},
+{ creditcardno[i] }},{{ creditcardexp[i] }},
+{{ creditcardsecuritycode[i] }},{{ portfolio.DATETIME }}, {{ portfolio.buy_symbol[i] }},{{ portfolio.buy_currentprice[i] }},{{ portfolio.buy_shares[i] }},{{ portfolio.buy_DATETIME[i] }},
+{{ portfolio.sell_fname[i] ~}},{{ portfolio.sell_lname[i] }},{{ portfolio.sell_email[i] }},{{portfolio.sell_phone[i] }},{{ portfolio.sell_country[i] }},{{portfolio.sell_address[i] }},{{ portfolio.sell_city[i] }},{{ portfolio.sell_state[i] }}{{ portfolio.sell_zip[i] }},
+{{ portfolio.sell_symbol[i] }},{{ portfolio.sell_currentprice[i] }},{{ portfolio.sell_shares[i] }},{{ portfolio.sell_DATETIME[i] }}
+WHERE {{ portfolio.fname[i]}},{{ portfolio.lname[i] }},{{ portfolio.email[i] }},{{portfolio.phone[i] }},{{ portfolio.country[i] }},{{portfolio.address[i] }},{{ portfolio.city[i] }},{{ portfolio.state[i] }}{{ portfolio.zip[i] }},  {{ portfolio.fname[i] ~}},{{ portfolio.lname[i] }},{{ portfolio.email[i] }},{{portfolio.phone[i] }},{{ portfolio.country[i] }},{{portfolio.address[i] }},{{ portfolio.city[i] }},{{ portfolio.state[i] }}{{ portfolio.zip[i] }},
+{ creditcardno[i] }},{{ creditcardexp[i] }},
+{{ creditcardsecuritycode[i] }},{{ portfolio.DATETIME }}, {{ portfolio.buy_symbol[i] }},{{ portfolio.buy_currentprice[i] }},{{ portfolio.buy_shares[i] }},{{ portfolio.buy_DATETIME[i] }},
+{{ portfolio.sell_fname[i] ~}},{{ portfolio.sell_lname[i] }},{{ portfolio.sell_email[i] }},{{portfolio.sell_phone[i] }},{{ portfolio.sell_country[i] }},{{portfolio.sell_address[i] }},{{ portfolio.sell_city[i] }},{{ portfolio.sell_state[i] }}{{ portfolio.sell_zip[i] }},
+{{ portfolio.sell_symbol[i] }},{{ portfolio.sell_currentprice[i] }},{{ portfolio.sell_shares[i] }},      {{ portfolio|sum(attribute'deposit[b] + users.cash[i]')},
+{{portfolio|sum(attribute='(buy_currentprice[i] * buy_shares[i]'))}}
+{{portfolio|sum(attribute='(sell_currentprice * sell_shares[i]')}}
+{{ portfolio.sell_DATETIME[i] }}
+FULL JOIN ON users WHERE portfolio.id=user.id
+INSERT INTO users
+SELECT {{ users.cash[i] }},{{ users.username[i] }}      {{ portfolio|sum(attribute'deposit[b] + users.cash[i]')}
+{{ users|sum(attribute='{{(users.cash[i] -  (price[i]  *  shares[i]'))}},{{ users,portfolio|sum(attribute='users.cash[i] +
+(users.cash[i] - (portfolio.buy_currentprice[i] * portfolio.buy_shares[i]'))}},{{ users,portfolio|sum(attribute='users.cash[i] +
+(users.cash[i] - (portfolio.buy_currentprice[i] * portfolio.buy_shares[i]'))}},
+WHERE {{users.username[i] }},{{ users.cash[i] }},
+ORDER BY {{ portfolio.buy_currentprice ASC;
+
+INSERT INTO portfolio
+SELECT {{ deposit[b] }},{{ symbol[b] }}, {{ shares[b] }},{{ price[b] }},{{ portfolio.fname[i] ~}},{{ portfolio.lname[i] }},{{ portfolio.email[i] }},{{portfolio.phone[i] }},{{ portfolio.country[i] }},{{portfolio.address[i] }},{{ portfolio.city[i] }},{{ portfolio.state[i] }}{{ portfolio.zip[i] }},
+{ creditcardno[i] }},{{ creditcardexp[i] }},
+{{ creditcardsecuritycode[i] }},{{ portfolio.DATETIME }}, {{ portfolio.buy_symbol[i] }},{{ portfolio.buy_currentprice[i] }},{{ portfolio.buy_shares[i] }},{{ portfolio.buy_DATETIME[i] }},
+{{ portfolio.sell_fname[i] ~}},{{ portfolio.sell_lname[i] }},{{ portfolio.sell_email[i] }},{{portfolio.sell_phone[i] }},{{ portfolio.sell_country[i] }},{{portfolio.sell_address[i] }},{{ portfolio.sell_city[i] }},{{ portfolio.sell_state[i] }}{{ portfolio.sell_zip[i] }},
+{{ portfolio.sell_symbol[i] }},{{ portfolio.sell_currentprice[i] }},{{ portfolio.sell_shares[i] }},{{ portfolio.sell_DATETIME[i] }}
+WHERE {{ portfolio.fname[i]}},{{ portfolio.lname[i] }},{{ portfolio.email[i] }},{{portfolio.phone[i] }},{{ portfolio.country[i] }},{{portfolio.address[i] }},{{ portfolio.city[i] }},{{ portfolio.state[i] }}{{ portfolio.zip[i] }},  {{ portfolio.fname[i] ~}},{{ portfolio.lname[i] }},{{ portfolio.email[i] }},{{portfolio.phone[i] }},{{ portfolio.country[i] }},{{portfolio.address[i] }},{{ portfolio.city[i] }},{{ portfolio.state[i] }}{{ portfolio.zip[i] }},
+{ creditcardno[i] }},{{ creditcardexp[i] }},
+{{ creditcardsecuritycode[i] }},{{ portfolio.DATETIME }}, {{ portfolio.buy_symbol[i] }},{{ portfolio.buy_currentprice[i] }},{{ portfolio.buy_shares[i] }},{{ portfolio.buy_DATETIME[i] }},
+{{ portfolio.sell_fname[i] ~}},{{ portfolio.sell_lname[i] }},{{ portfolio.sell_email[i] }},{{portfolio.sell_phone[i] }},{{ portfolio.sell_country[i] }},{{portfolio.sell_address[i] }},{{ portfolio.sell_city[i] }},{{ portfolio.sell_state[i] }}{{ portfolio.sell_zip[i] }},
+{{ portfolio.sell_symbol[i] }},{{ portfolio.sell_currentprice[i] }},{{ portfolio.sell_shares[i] }},
+{{portfolio|sum(attribute='(buy_currentprice[i] * buy_shares[i]'))}}
+{{portfolio|sum(attribute='(sell_currentprice * sell_shares[i]')}}
+{{ portfolio.sell_DATETIME[i] }}
+FULL JOIN ON users WHERE portfolio.id=user.id
+INSERT INTO users
+SELECT {{ users.cash[i] }},{{ users.username[i] }}
+{{ users|sum(attribute='{{(users.cash[i] -  (price[i]  *  shares[i]'))}},{{ users,portfolio|sum(attribute='users.cash[i] +
+(users.cash[i] - (portfolio.buy_currentprice[i] * portfolio.buy_shares[i]'))}},{{ users,portfolio|sum(attribute='users.cash[i] +
+(users.cash[i] - (portfolio.buy_currentprice[i] * portfolio.buy_shares[i]'))}},
+WHERE {{users.username[i] }},{{ users.cash[i] }};
+
+<p|e>{%for i in range(0, len)%} {%- endfor %}<\p|e>
+ 
+<p|e>  
+{% for buy_currentprice in portfolio %}
+    {% if loop.previtem is defined and value  loop.previtem %}
+       {% set reply | wordwrap %}
+        The value just increased!
+        {% endset %}{% endif %}}      
+    {{ buy_currentprice }}
+    {% if loop.nextitem is defined and loop.nextitem > value %}{% set reply | wordwrap %}
+        The value will increase even more!
+    {{ buy_currentprice }}    
+    {% endset %}{% endif %}}      
+    {% if loop.previtem is defined and value < loop.previtem %}      {% set reply | wordwrap %}
+        The value just decreased!
+    {% endset %}{% endif %}}      
+    {{ buy_currentprice }}
+    {% if loop.nextitem is defined and loop.nextitem < value %}      {% set reply | wordwrap %}
+        The value will decrease even more!
+    {{ buy_currentprice }}
+     {% endset %}{% endif %}} {%- endfor %} 
+ </p|e>  
+ 
+   <p|e>
+
+{% for row in range(0, len) %}
+count= +1;{%- endfor %}
+</p|e>
+<p|e>
+{% for users.name in range(0, len) %}
+{% set reply | wordwrap %}
+{{ "Hello, %s!" % users.name }}
+{% endset %}{%- endfor %} </p|e>
+
+   
+
+ <p|e>{%for i in range(0, len)%} 
+ {%- endfor%}<\p|e>
+ 
+<p|e>{%for b in range(0, len)%} 
+if {{ shares[b] }} 
+{{ portfolio.buy_shares[i]}} = {{ shares[b] }}
+{{% endif %}}
+if {{ price[b]]
+{{ portfolio.buy_price[i] }} = {{ price[b] }}
+{{% endif %}} 
+if {{ deposit[b] }}	
+users.cash = deposit[b] + users.cash
+ {% endif %} {%- endfor%}<\p|e>
+
+p|e>{%for i,b in range(0, len) %} 
+    {% if users.cash is defined and value <  {{ users|sum(attribute='{{(users.cash[i] - 
+    10,000.00 (price[b]  *  shares[b]'))} %}
+       <size="1px">😊</size> Sorry,your account balance will not allow purchase, the requirement is a default balance of $10,000.00 always. {% endif %}{{- endfor %}}
+    
+       {% for row in range(0, len) %} 
+       {{ "Hello, %s!" % users.name }}
+ 
+
+ 
+            <div "progress-bar-container bg-dark" "padding-0.25em, 1em" "border-radius:1em" style="width:35%">
+<div class="progress" role="progressbar" aria-label="Animated striped" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width: 33%"></div>
+</div></div>
+  
+ <form action="/buy.html"  method="POST">
+ <div "tab">
+    <fieldset class="form-group"> 
+     
+             
+    <legend>Add Cash or Buy Stocks</legend>
+      
+  <label for="floatingInputfname"> First Name</label>     
+      <div class="form-floating mb-3">      
+        <input type="text" readonly="" class="form-control-plaintext" id="floating Inputfname" value="" 
+   data-ddg-inputtype="identities.fname" required>{{ users.fname[i] }}
+      </div>
+      
+ <label for="floatingInputlname">Last Name
+ </label>
+      <div class="form-floating mb-3">    
+        <input type="text" readonly="" class="form-control-plaintext" id="floating Inputlname" value="" 
+  data-ddg-inputtype="identities.lname" required>{{ users.lname[i] }}
+      </div>
+     
+    
+   
+     <label for="floatingInputemail">Email</label>
+      <div class="form-floating mb-3">    
+      <input type="email" class="form-control" id="floatingInputEmail1" aria-describedby="com" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="username@example.com" oninput="this.className = ''" data-ddg-inputtype="identities.emailAddress">
+            {{ portfolio.email[i] }}            </div>
+            
+ <label for="floatingInputphone">Phone
+ </label>
+ <div class="form-floating mb-3">    
+      <input type="phone" class="form-control" id="floatingInputphone" aria-describedby=""
+   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"   
+      placeholder="123-456-7899" oninput="this.className = ''" data-ddg-inputtype="identities.phone" 
+      required>
+            {{ portfolio.phone[i] }}            </div>
+            
+<label for="floatingInputcountry">
+Country</label>
+       <div class="form-floating mb-3">    
+        <input type="text" readonly="" class="form-control-plaintext" id="floating Inputcountry" value="" aria-describedby="countryHelp" 
+        placeholder="USA"
+pattern="[A-Za-z]{3}" 
+        data-ddg-inputtype="identities.country" required>
+  {{ portfolio.country[i] }} 
+  
+    </div> 
+ <div> 
+         
+<small name="countryHelp" class="form-text"> Please enter your 3 letter country code
+</small>
+    </div> 
+    
+    
+    
+<label for="floatingInputaddreas">Home Address</label>
+      <div class="form-floating mb-3">
+        <input type="text" readonly="" class="form-control-plaintext" id="floating Inputaddress" value="" placeholder="123 Main St."
+  data-ddg-inputtype="identities.address" required>
+  {{ portfolio.address[i] }}         
+      </div>
+     
+   <label for="floatingInputcity">City
+   </label>
+      <div class="form-floating mb-3">
+  <input type="text" readonly="" class="form-control-plaintext" id="floatingInputcity" value="" placeholder="Cambridge" 
+  data-ddg-inputtype="identities.city" required>
+  {{ portfolio.city[i] }}         
+      </div>
+      <label for="floatingInputstate">State
+      </label>
+      <div class="form-floating mb-3">
+        <input type="text" readonly="" class="form-control-plaintext" id="floating Inputstate" value="" placeholder="Massachusetts" 
+   data-ddg-inputtype="identities.state" required> 
+  {{ portfolio.state[i] }}    
+      </div>
+  
+ <label for="floatingInputzip">Zip Code
+ </label>
+      <div class="form-floating mb-3">
+        <input type="text" readonly="" class="form-control-plaintext" id="floating Inputzip" value="" placeholder="10001" 
+   data-ddg-inputtype="identities.zip" required> 
+  {{ portfolio.zip[i] }}
+      </div>
+  
+  
+  
+     <fieldset class="form-group">  
+     <legend>Transactions</legend>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+ <i class="fa fa-cc-bitcoin" style="color:green;"></i>             
+            </div>    
+  
+  <label for="floatingInputnameonCard">Name on card</label>
+  <div class="form-floating mb-3">
+            <input type="text" id="floatingInputnameonCard" 
+   data-ddg-inputtype="identities.nameoncard" name="nameonCard" placeholder="">
+  {{ portfolio.creditcardno[i] }}                   <!div>
+ <label for="floatingInputcreditCard"Credit card no.</label>
+ <div class="form-floating mb-3">
+            <input type="text" id="floatingInputcreditCard" 
+ data-ddg-inputtype="identities.ccno" 
+  name="creditcard" placeholder="" >
+  {{ portfolio.creditcardno[i] }}   
+ </div> 
+  <label for="floatingInputccexp">Exp month/year</label>
+  <div class="form-floating mb-3">
+            <input type="month" id="floatingInputccexp" name="date"data-ddg-inputtype="identities.ccexp"          placeholder="Cambridge">portfolio.creditcardexp[i] }}
+                <label for="floatingInputsecuritycccode">Security code</label>
+ <div class="form-floating mb-3">         
+                <input type="text" id="floatingInputsecuritycccode"data-ddg-inputtype="identities.cccode"name="securitycode" placeholder="352"
+ pattern="[0-9]{3,}" required>
+                {{ portfolio.creditcardsecuritycode[i] }}
+       
+              </div>     
+            </div>               
+                
+   <label for="floatingInputBitcoin" disabled>Bitcoin Purchase</disabled></label>
+ <div class="form-floating mb-3">         
+                <input type="text" id="floatingInputBitcoin" name="bitcoin" placeholder=""
+ pattern="[0-9]{3,}" disabled>         
+  </disabled>             
+                
+                
+              </div>     
+            
+ 
+         
+ 
+ 
+
+   <label for="floatingInputbuyaddbalance">Add Cash Balance</label>
+<div class="form-floating mb-3">                     
+            <input type="text"  value="l" id="floatingInputaddbalance"   autocomplete="false" name="depositb"  
+ data-ddg-inputtype="identities.depositb"oninput="this.className = ''" 
+ pattern="[0-9]" placeholder="$    .00">
+            {{ portfolio|sum(attribute'deposit[b] + users.cash[i]')}}</div>  
+   
+            <label for="floatingInputbuySymbol">Stock Symbol</label>
+<div class="form-floating mb-3">                     data-ddg-inputtype="identities.symbol" 
+ <input type="text"  value="lookup" id="floatingInputbuySymbol"   autocomplete="false" name="symbol"  placeholder="NFLX" required>
+            {{ symbol[b] }}</div>
+            
+           <label for="portfolio_coBuyname" disabled>Company Name</disabled> </label>
+            <input type="text" id="portfolio _coBuyname"  autocomplete="false" name="portfolio.cobuyname" placeholder="Netflix" disabled>
+            </disabled></div>        
+            
+                <label for="floatingInputsharesb">Number Shares
+                </label>
+  <div class="form-floating mb-3"><input type="text" id="floatingInputsharesb"  autocomplete="false" data-ddg-inputtype="identities.shares" name="shares" 
+  pattern="[0-9]" placeholder="200" required>
+              {{ shares[b] }}
+                </div>
+                <label for="floatingInputpriceb">Price</label>
+ <div class="form-floating mb-3"><input type="text" value="lookup" id="floatingInputpriceb"  data-ddg-inputtype="identities.price" autocomplete="false" name="price" oninput="this.className = ''" placeholder="$    .00" required>{{ price[b] }}
+           </div>            
+              </div>
+  </fieldset>   <fieldset class="form-group">                  
+            <legend>Cart Total</legend>  
+  <label class="form-label mt-4" for"buyshares>Total Cash Balance Deduction
+            </label>
+       <div class="form-group">     
+            <input type="text" id="buyShares" autofocus data-ddg-inputtype="identities.cost" 
+  autocomplete="false" name="totalCost" 
+  oninput="this.className = ''" 
+ pattern="[0-9]" placeholder="$    .00">
+            {{ portfolio|sum(attribute'price [b] * shares[b]')}}
+            </div>
+            /*<p id="sell"></p>*/
+<label class="form-label mt-4" for="deposit ">Total Deposit 
+            </label>
+       <div class="form-group">     
+            <input type="text" id="deposit" autofocus data-ddg-inputtype="identities.deposit" autocomplete="false" name="deposit" 
+  oninput="this.className = ''" 
+ pattern="[0-9]" placeholder="$    .00">
+            {{ deposit [b] }}
+            </div>
+            
+   
+   
+<button class="btn btn primary" id="deduction" 
+onclick="myFunction()" type="submit">PURCHASE</button>
+
+
+<button class="btn btn primary" id=deposit"
+onclick="myFunction()" type="submit">DEPOSIT </button>
+</div>
+
+</div>
+          </div></fieldset></fieldset>
+ </form>
+ </div>  
+
+
+
+  
+
+
+    
+ 
+
+
+
+        
+
+
+
+
+<script>
+function myFunction() {
+  window.location.href = "/index.html";
+}
+</script>
+
+
+
+/*
+<script>
+let num=>{{shares * price}}
+let n = num.toFixed(2);
+
+document.getElementById("buy").innerHTML = n;
+</script>
+
+
+<script>
+let num=>{{users.cash_balance}} - {{shares * price}}
+let n = num.toFixed(2);
+
+document.getElementById("balance").innerHTML = n;
+</script>*/
+  
+  <link href=/static/finance.bundle.min.js type="text/js" rel=javascript>  
+    
+
+
+        
+{% endblock %}
+
+
+
+
+
+
+
+
+          
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+
+
+
+
