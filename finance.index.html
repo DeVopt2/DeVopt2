@@ -34,6 +34,10 @@ td{
 	/* Opera 9+, IE 9+ */
 	opacity: 0.2;
 }
+#main{
+display: flex;
+flex: wrap;
+}
 </style>
     
 {% endblock %}
@@ -169,7 +173,7 @@ p|e>{%for i,b in range(0, len) %}
     </tr>
   </thead>
   <tbody> 
-  <tr "d-inline-flex h-align-centered bg-success:0,0,0,0.1">
+  <tr "d-inline-flex h-align-centered bg-success:0,0,0,0.1 id="main">
       <th scope="row"></th>
       <td>{{users.username[i]}}</td>
       <td>{{users.cash[i]}}</td>
