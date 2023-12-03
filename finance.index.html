@@ -11,11 +11,8 @@
     
 
 td{
-	bg: green-600;
-	rgba(0,0,0,0.2); 
-	/* Required for IE 5, 6, 7 */
-	/* ...or something to trigger hasLayout, like zoom: 1; */
-	width: 100%; 
+ 	bg: sucess(rgba 0,0,0,.01);
+ 	
 		
 	/* Theoretically for IE 8 & 9 (more valid) */	
 	/* ...but not required as filter works too */
@@ -151,20 +148,11 @@ p|e>{%for i,b in range(0, len) %}
 
  
    <class="container-fluid">
-  
- 
-
-
-
-
-
-
-<table class="table responsive"
- border border-5">   
+<table class="table-responsive table-border text="success-glow">
   <caption>Stock Fluctuations
   </caption>
- <thead class="table-dark"> e>
-    <tr "d-inline-flex">
+ <thead class="table-dark"> 
+    <tr ""d-inline-flex h-align-centered">
     <th scope="col">Row</th>
       <th scope="col">Username</th>
       <th scope="col">Cash Balance</th>
@@ -181,35 +169,32 @@ p|e>{%for i,b in range(0, len) %}
     </tr>
   </thead>
   <tbody> 
-  <tr "d-inline-flex"> 
+  <tr "d-inline-flex h-align-centered bg-success:0,0,0,0.1">
       <th scope="row"></th>
-      <td>{users.username[i]</td>
+      <td>{{users.username[i]}}</td>
       <td>{{users.cash[i]}}</td>
-            <td><span>
-      <i class="bi bi-right-arrow-circle"></i></span>
-      </td>
+            <td>
+      <i>
+      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#right-arrow-circle"/></svg></i> </td>
       <td>{{ portfolio.buy_symbol[i]}}</td>
      <td><disabled></disabled></td>
      <td>{{ portfolio.buy_shares[i]}}</td> 
       <td>{{ portfolio.buy_price[i]}}</td> 
       <td>{{ portfolio.buy__currentprice[i]   }}
       </td>
-      <td><span>
-      <i class="bi bi-right-arrow-circle"></i></span>
-      </td>
+      <td>
+      <i>
+      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#right-arrow-circle"/></svg></i> </td>
       <td>{{ portfolio|sum(attribute='buy_currentprice[i] * buy_shares[i]'))}}</td>
       <td>{{ users,portfolio|sum(attribute='users.cash[i] +
 (portfolio.buy_currentprice[i] * portfolio.buy_shares[i]'))}}</td>
       
     </tr>
   </tbody>
-</table>
+</table></div>
 </container>
-
- 
-    <link href=/static/finance.bundle.min.js type="text/js" rel=javascript>
-{% endblock %}
-
+      {% endblock %}  
+    
 
 
 
