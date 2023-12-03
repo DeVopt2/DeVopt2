@@ -1,6 +1,4 @@
 
-
-
 {% extends "layout.html" %}
 <div container-fluid>
 {% blockhead %}
@@ -11,19 +9,38 @@
  (% blockcontent %}
  <class="container-fluid">
  <form class="in-line" action="/quote.html"  method="POST">    
-  <div class="mb-3" form-text id="quoteHelp">
-  Get A Stock Quote</div>
+  <div class="mb-3" form-text id="quoteHelp"  h-align="centered">  
+  <strong>Get A Stock Quote</strong>
     <input type="text" class="form-control" autofocus
     id="inputSymbol" autocomplete="false" name="symbol" placeholder="NFLX" required></div>
-   <button class="btn btn-primary"  data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="If not redirected in 5 secs. go to <a href="/quoted.html"</a> data-bs-original-title="Popover Title" button-type="submit">Get Quote</button>
-</form>   
+ <div h-align="centered">  
+    <button class="btn btn-primary"  data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" 
+   data-bs-placement="top" data-bs-content="If not redirected in 5 secs. go to <a href="/quoted.html">Quoted</a> button-type="submit">Get Quote
+   </button></div> 
+</form>  
 </container>
-      <link href=/static/finance.bundle.min.js type="text/js" rel=javascript>           
+
+
+ <script>     
+ document.querySelectorAll('[data-bs-toggle="popover"]')
+    .forEach(popover => {
+      new bootstrap.Popover(popover)
+    })
+
+ function setActiveItem() {
+    const { hash } = window.location
+
+    if (hash === '') {
+      return
+    } 
+  setActiveItem()
+  window.addEventListener('hashchange', setActiveItem)
+})()
+   
+  </script>
+      
        
 {% endblock %}
-
-
-
 
 
     
