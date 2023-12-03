@@ -10,13 +10,10 @@
 
 
 <style>
-th scope="row" {
-bg: blue-600;
-rgba(0,0,0,0.2);
+td{
+	bg: primary rgba(0,0,0,0.1);
 /* Required for IE 5, 6, 7 */
 /* ...or something to trigger hasLayout, like zoom: 1; */
-width: 100%;
-
 /* Theoretically for IE 8 & 9 (more valid) */
 /* ...but not required as filter works too */
 /* should come BEFORE filter */
@@ -152,18 +149,18 @@ p|e>{%for i,b in range(0, len) %}
 
 
 
-<table class="table responsive"
-border border-5">
+<table class="table-responsive table-border text="primary-glow">
 <caption>Acccount History</caption>
 <thead class="table-light">
-  <tr "d-inline-flex">
+<div id="main">
+  <tr "d-inline-flex h-align="centered">
     <th scope="col">Row</th>
     <th scope="col">Registered</th>
     <th scope="col">Username</th>
     <th scope="col">Full Name</th>
     <th scope="col">Cash Balance</th>
     <th scope="col">Cash Balance Entries</th>
-    <th scope="col"><u><Buys:</u></th>
+    <th scope="col"><u>Buys:</u></th>
       <th scope="col">Symbol</th>
       <th scope="col" disabled>Co. Name</th>
       <th scope="col">Shares</th>
@@ -184,17 +181,17 @@ border border-5">
     </tr>
   </thead>
   <tbody>
-    <tr "d-inline-flex">
+    <tr "d-inline-flex h-align-centered bg-primary:0,0,0,0.1">
       <th scope="row"></th>
       <td>{{portfolio.DATETIME[i]}}</td>
-      <td>{users.username[i]</td>
+      <td>{{users.username[i]}}</td>
       <td>{{portfolio.firstname[i] ~}}
         {{portfolio.lastname[i]}}</td>
       <td>{{users.cash[i]}}</td>
       <td>{{users.DATETIME[i]}}</td>
-      <td><span>
-        <i class="bi bi-right-arrow-circle"></i></span></td>
-
+      <td>
+      <i>
+      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#right-arrow-circle"/></svg></i> </td>
         <td>{{ portfolio.buy_symbol[i]}}</td>
         <td disabled>&nbsp;&nbsp;&nbsp;</td>
         <td>{{ portfolio.buy_shares[i]}}</td>
@@ -202,9 +199,9 @@ border border-5">
           <td>{{ portfolio.buy_currentprice[i]}}</td>
           <td>{{ portfolio.buy_DATETIME[i] }}
           </td>
-          <td><span>
-            <i class="bi bi-right-arrow-circle"></i></span>
-          </td>
+          <td>
+      <i>
+      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#right-arrow-circle"/></svg></i> </td>
           <td>{{ portfolio.sell_symbol[i]}}</td>
           <td disabled>&nbsp;nbspnbsp;nbsp;</td>
           <td>{{ portfolio.sell_shares[i]}}</td>
@@ -212,18 +209,17 @@ border border-5">
           <td>{{ portfolio.sell_currentprice[i]}}</td>
           <td>{{ portfolio.sell_DATETIME[i]}}
           </td>
-          <td><span>
-            <i class="bi bi-right-arrow-circle"></i></span
-            </td>
+          <td>
+      <i>
+      <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#right-arrow-circle"/></svg></i> </td>
             <td>{{ portfolio|sum(attribute='buy_currentprice[i] * buy_shares[i]'))}}</td>
             <td>{{ users,portfolio|sum(attribute='users.cash[i] +
               (portfolio.buy_currentprice[i] * portfolio.buy_shares[i]'))}}</td>
 
           </tr>
         </tbody>
-        </table>
+        </table></div></div>
       </container>
 
-
-      <link href=/finance.bundle.min.js type="text/js" rel=javascript>
-      {% endblock %}
+      {% endblock %}  
+    
