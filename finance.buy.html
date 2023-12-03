@@ -118,10 +118,11 @@ p|e>{%for i,b in range(0, len) %}
  
 
  
-            <div "progress-bar-container bg-dark" "padding-0.25em, 1em" "border-radius:1em" style="width:35%">
-<div class="progress" role="progressbar" aria-label="Animated striped" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-<div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width: 33%"></div>
-</div></div>
+            <div "progress-bar-container bg-dark" "padding-0.25em, 1em" "border-radius:1em" style="width:40%">    
+  <div class="progress" role="progressbar" aria-label="Progress-bar - animated striped success" style="width: 35%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar-animation-timing:1s linear infinite;
+progress-bar-transition:           width .6s ease;">
+          </div>   </div></div>
   
  <form action="/buy.html"  method="POST">
  <div "tab">
@@ -132,14 +133,14 @@ p|e>{%for i,b in range(0, len) %}
       
   <label for="floatingInputfname"> First Name</label>     
       <div class="form-floating mb-3">      
-        <input type="text" readonly="" class="form-control-plaintext" id="floating Inputfname" value="" 
+        <input type="text"  class="form-control-plaintext" id="floating Inputfname" value="" 
    data-ddg-inputtype="identities.fname" required>{{ users.fname[i] }}
       </div>
       
  <label for="floatingInputlname">Last Name
  </label>
       <div class="form-floating mb-3">    
-        <input type="text" readonly="" class="form-control-plaintext" id="floating Inputlname" value="" 
+        <input type="text"  class="form-control-plaintext" id="floating Inputlname" value="" 
   data-ddg-inputtype="identities.lname" required>{{ users.lname[i] }}
       </div>
      
@@ -162,7 +163,7 @@ p|e>{%for i,b in range(0, len) %}
 <label for="floatingInputcountry">
 Country</label>
        <div class="form-floating mb-3">    
-        <input type="text" readonly="" class="form-control-plaintext" id="floating Inputcountry" value="" aria-describedby="countryHelp" 
+        <input type="text" class="form-control-plaintext" id="floating Inputcountry" value="" aria-describedby="countryHelp" 
         placeholder="USA"
 pattern="[A-Za-z]{3}" 
         data-ddg-inputtype="identities.country" required>
@@ -179,7 +180,7 @@ pattern="[A-Za-z]{3}"
     
 <label for="floatingInputaddreas">Home Address</label>
       <div class="form-floating mb-3">
-        <input type="text" readonly="" class="form-control-plaintext" id="floating Inputaddress" value="" placeholder="123 Main St."
+        <input type="text" class="form-control-plaintext" id="floating Inputaddress" value="" placeholder="123 Main St."
   data-ddg-inputtype="identities.address" required>
   {{ portfolio.address[i] }}         
       </div>
@@ -187,14 +188,14 @@ pattern="[A-Za-z]{3}"
    <label for="floatingInputcity">City
    </label>
       <div class="form-floating mb-3">
-  <input type="text" readonly="" class="form-control-plaintext" id="floatingInputcity" value="" placeholder="Cambridge" 
+  <input type="text" class="form-control-plaintext" id="floatingInputcity" value="" placeholder="Cambridge" 
   data-ddg-inputtype="identities.city" required>
   {{ portfolio.city[i] }}         
       </div>
       <label for="floatingInputstate">State
       </label>
       <div class="form-floating mb-3">
-        <input type="text" readonly="" class="form-control-plaintext" id="floating Inputstate" value="" placeholder="Massachusetts" 
+        <input type="text" class="form-control-plaintext" id="floating Inputstate" value="" placeholder="Massachusetts" 
    data-ddg-inputtype="identities.state" required> 
   {{ portfolio.state[i] }}    
       </div>
@@ -202,7 +203,7 @@ pattern="[A-Za-z]{3}"
  <label for="floatingInputzip">Zip Code
  </label>
       <div class="form-floating mb-3">
-        <input type="text" readonly="" class="form-control-plaintext" id="floating Inputzip" value="" placeholder="10001" 
+        <input type="text"  class="form-control-plaintext" id="floating Inputzip" value="" placeholder="10001" 
    data-ddg-inputtype="identities.zip" required> 
   {{ portfolio.zip[i] }}
       </div>
