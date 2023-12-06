@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+/*<!DOCTYPE html>
 <html lang="en-US">
 <html>
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">*/
 {% extends "layout.html" %}
 {% block head %}
 {% block title %}Birthdays{% endblock %}
@@ -97,7 +97,7 @@ td{
 																																						   <tbody>
 																																						     <tr "d-inline-flex">
 																																							       <th scope="row">1</th>
-																																								         <td>{users.username[i]</td>
+																																								         <td>{{users.username[i]}}</td>
 																																										       <td>{{users.month[i]}}</td>
 
 																																														       </tr>
@@ -116,6 +116,5 @@ td{
 																																																	  </p|e>
 
 
-																																																	  <link href=/static/finance.bundle.min.js type="text/js" rel=javascript>
-																																																	  {% endblock %}
+																																																	  																																													  {% endblock %}
 																																																	  
