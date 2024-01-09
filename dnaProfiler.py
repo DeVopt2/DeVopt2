@@ -69,18 +69,18 @@ def main(char argc, *argv[]):
                  DictReader(data[i][j]_csv)
     	                  
     # TODO: Read DNA sequence file into a variable
-    with open('sequences/[*21].txt') as    
+    with open('sequences/[*20].txt') as    
                dna_sequence_no[*20].txt:   
         lines = txt.readlines()
         for line in lines:
             return(f" lines, end=''") 
         dnaseq_dict[*20]{}
-        for x in dnaseq_dict[*21]:
+        for x in dnaseq_dict[*20]:
      	    dnaseq_dict[*20] = lines 
      	    
     # TODO: Find longest match of each STR in DNA sequence      
     dnaseq_dict[21]       
-    for l in range(len([dnaseq_dict[21])):
+    for l in range(len([dnaseq_dict[20])):
          if  (l = 1; dnaseq_dict[l]   
               ++l): 	 
     	longest_match([l])
@@ -106,7 +106,7 @@ def main(char argc, *argv[]):
     	             if (match)	
                print("{}".format(name))
              
-    for (p = 0: node5->next[p], argv[p], 
+    for (p = 0:  argv[p], 
      dna_sequence_no[p], dnaseq_dict[p]):
          if (p != NULL):
              p == q) 
