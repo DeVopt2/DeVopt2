@@ -20,7 +20,7 @@ The Coleman-Liau index was designed to be easily calculated mechanically from sa
         S = (sentences / words) * 100
         coleman_liau_index = 0.0588 * L -
         0.296 * S - 15.8
-        grade = m.coleman_liau_index
+        grade = coleman_liau_index
     if grade => 16:
         grade = 16+
         print("Grade Level:", grade)
