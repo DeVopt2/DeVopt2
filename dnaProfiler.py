@@ -105,15 +105,7 @@ def main(char argc, *argv[]):
     	         	{name} = ROW
     	             if (match)	
                print("{}".format(name))
-             
-    for (p = 0:  argv[p], 
-     dna_sequence_no[p], dnaseq_dict[p]):
-         if (p != NULL):
-             p == q) 
-             q = p−>next
-             free(p)
-       print ("pointers freed!")
-       
+                 
     return 0
 
 
